@@ -4,40 +4,29 @@ package lesson11;
 //ко-вом гостей от 2 до четырех
 public class TripAdvisorAPI implements API {
     Room[] rooms;
-
     public TripAdvisorAPI(Room[] rooms) {
         this.rooms = rooms;
     }
-
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        int maxPersons = persons + 1;
-        int minPersons = persons - 1;
-        Room[] rooms = new Room[countRooms(price, persons, city, hotel)];
-        for (Room room : rooms) {
-            if (room != null && room.getPrice() == price && (room.getPersons() == persons && room.getPersons() == maxPersons &&
-        room.getPersons() == minPersons) && room.getCityName().equals(city) && room.getHotelName().equals(hotel))
-                return rooms;
-        }
-        return rooms;
-    }
-
-    // ---------------------------------------------------------------------------------------------------------------------
-    public int countRooms(int price, int persons, String city, String hotel) {
         int i = 0;
-        int maxPersons = persons + 1;
-        int minPersons = persons - 1;
         for (Room room : rooms) {
-            if (room != null && room.getPrice() == price && (room.getPersons() == persons && room.getPersons() == maxPersons &&
-                    room.getPersons() == minPersons) && room.getCityName().equals(city) && room.getHotelName().equals(hotel))
+            if (room != null && room.getPrice() == price && room.getPersons() >= persons - 1 &&
+                    room.getPersons() <= persons + 1 && room.getCityName().equals(city) && room.getHotelName().equals(hotel)) {
                 i++;
+            }
         }
-        return i;
+        int x = 0;
+        Room[] res = new Room[i];
+        for (Room room : rooms) {
+            if (room != null && room.getPrice() == price && room.getPersons() >= persons - 1 &&
+                    room.getPersons() <= persons + 1 && room.getCityName().equals(city) && room.getHotelName().equals(hotel)) {
+                res[x] = room;
+                x++;
+            }
+        }
+        return res;
     }
-
-    //------------------------------------------------------------------------------------------------------------------------
-
-
     @Override
     public Room[] getAll() {
         int i = 0;
@@ -45,14 +34,14 @@ public class TripAdvisorAPI implements API {
             if (room != null)
                 i++;
         }
-        Room[] rooms1 = new Room[i];
+        Room[] res = new Room[i];
         int x = 0;
         for (Room room : rooms) {
             if (room != null) {
-                rooms1[x] = room;
+                res[x] = room;
+                x++;
             }
-
         }
-        return rooms1;
+        return res;
     }
 }

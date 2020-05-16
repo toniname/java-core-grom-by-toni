@@ -11,8 +11,8 @@ public class UserRepository {
         if (findById(user.getId()) != null)
             return null;
         int count = 0;
-        for (User user1 : users) {
-            if (user1 != null)
+        for (User us : users) {
+            if (us != null)
                 count++;
         }
         if (count > 9)

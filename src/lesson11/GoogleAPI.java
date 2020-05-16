@@ -5,35 +5,29 @@ package lesson11;
 
 public class GoogleAPI implements API {
     Room[] rooms;
-
     public GoogleAPI(Room[] rooms) {
         this.rooms = rooms;
     }
-
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        int x = 0;
-        Room[] rooms3 = new Room[countRooms(price, persons, city, hotel)];
-        for (Room room : rooms) {
-            if (room != null && room.getPrice() == price && room.getPersons() == persons &&
-                    room.getCityName().equals(city) && room.getHotelName().equals(hotel)){
-                rooms3[x] = room;
-            }
-
-        }
-        return rooms3;
-
-    }
-    public int countRooms(int price, int persons, String city, String hotel) {
         int i = 0;
         for (Room room : rooms) {
             if (room != null && room.getPrice() == price && room.getPersons() == persons &&
-                    room.getCityName().equals(city) && room.getHotelName().equals(hotel))
+                    room.getCityName().equals(city) && room.getHotelName().equals(hotel)) {
                 i++;
+            }
         }
-        return i;
+        int x = 0;
+        Room[] res = new Room[i];
+        for (Room room : rooms) {
+            if (room != null && room.getPrice() == price && room.getPersons() == persons &&
+                    room.getCityName().equals(city) && room.getHotelName().equals(hotel)) {
+                res[x] = room;
+                x++;
+            }
+        }
+        return res;
     }
-
     @Override
     public Room[] getAll() {
         int i = 0;
@@ -44,10 +38,10 @@ public class GoogleAPI implements API {
         Room[] rooms1 = new Room[i];
         int x = 0;
         for (Room room : rooms) {
-            if (room != null){
+            if (room != null) {
                 rooms1[x] = room;
+                x++;
             }
-
         }
         return rooms1;
     }
