@@ -54,7 +54,7 @@ public class BanksPractice {
     static void depositMoney(String[] clients, int[] balances, String client, int money) {
         int clientIndex = 0;
         for (String cl : clients) {
-            if (cl == client) {
+            if (cl.equals(client)) {
                 break;
             }
             clientIndex++;
