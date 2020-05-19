@@ -6,7 +6,7 @@ public class owerDraft {
         int[] balances = {100, 500, 8432, -99, 12000, -54, 0};
         System.out.println(withdraw(clients, balances, "Denis", 9000));
     }
-    private static int withdraw(String[] clients, int[] balances, String client, int amount) {
+    static int withdraw(String[] clients, int[] balances, String client, int amount) {
         int clientIndex = 0;
         for (String cl : clients){
             if (cl == client) {
