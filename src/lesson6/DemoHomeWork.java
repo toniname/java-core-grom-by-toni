@@ -13,9 +13,9 @@ import java.util.Date;
 public class DemoHomeWork {
     Order createOrder() {
         Date dateCreated = new Date();
-      //  Order order = new Order(100, dateCreated, false, null, "Dnepr", "Ukraine", "Buy"); то же что и снизу
-      //  return order;
-        return new Order(100, dateCreated, false, null, "Dnepr", "Ukraine", "Buy");
+        Order order = new Order(100, dateCreated, false, null, "Dnepr", "Ukraine", "Buy"); //то же что и снизу
+        return order;
+       // return new Order(100, dateCreated, false, null, "Dnepr", "Ukraine", "Buy");
 
 
     }
