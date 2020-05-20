@@ -61,6 +61,22 @@ public class Order {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", price=" + price +
+                ", dateCreated=" + dateCreated +
+                ", isConfirmed=" + isConfirmed +
+                ", dateConfirmed=" + dateConfirmed +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
+
+
+
     public boolean isValidType() {
         String Buy = null;
         String Sale = null;
@@ -68,5 +84,8 @@ public class Order {
             return true;
         }
         return false;
+
+
     }
+
 }
