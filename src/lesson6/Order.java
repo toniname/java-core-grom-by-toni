@@ -80,7 +80,7 @@ public class Order {
     public boolean isValidType() {
         String Buy = null;
         String Sale = null;
-        if (type == Buy || type == Sale) {
+        if (type.equals(Buy) || type.equals(Sale)) {
             return true;
         }
         return false;
