@@ -19,4 +19,13 @@ public class Android extends Phone {
     void installNewAndroidVersion(){
         System.out.println("installNewAndroidVersion invoked....");
     }
+
+    @Override
+    public String toString() {
+        return "Android{" +
+                "androidVersion='" + androidVersion + '\'' +
+                ", screenSize=" + screenSize +
+                ", secretDeviseCode='" + secretDeviseCode + '\'' +
+                '}';
+    }
 }
