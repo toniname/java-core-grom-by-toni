@@ -30,6 +30,4 @@ public class Customer {
     public String getGender() {
         return gender;
     }
-
-
 }
