@@ -2,6 +2,8 @@ package lesson10.abstractbigexample;
 
 import lesson10.abstractexample.DbProvider;
 
+import java.util.Arrays;
+
 public class EmployeeController {
     private Employee[] employees = new Employee[100];
 
@@ -13,7 +15,13 @@ public class EmployeeController {
 
     }
 
-   /* void paySalaryToEmployees() {
+    @Override
+    public String toString() {
+        return "EmployeeController{" +
+                "employees=" + Arrays.toString(employees) +
+                '}';
+    }
+    /* void paySalaryToEmployees() {
         for (Employee employee : employees) {
             if (employee instanceof DeveloperEmployee) {
                 int newBalance = employee.getBankAccount().getBalance() + employee.getSalaryPerMonth() + 1000;
