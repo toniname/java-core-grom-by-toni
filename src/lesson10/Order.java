@@ -81,4 +81,19 @@ public abstract class  Order {
     public String getShipToCity(){
         return shipToCity;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "itemName='" + itemName + '\'' +
+                ", dateCreated=" + dateCreated +
+                ", dateConfirmed=" + dateConfirmed +
+                ", dateShipped=" + dateShipped +
+                ", shipFromCity='" + shipFromCity + '\'' +
+                ", shipToCity='" + shipToCity + '\'' +
+                ", basePrice=" + basePrice +
+                ", totalPrice=" + totalPrice +
+                ", customerOwned=" + customerOwned +
+                '}';
+    }
 }
