@@ -16,4 +16,13 @@ public class Account {
     void changeOwnerName(String newOwnerName ){
         ownerName = newOwnerName;
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "bankName='" + bankName + '\'' +
+                ", ownerName='" + ownerName + '\'' +
+                ", moneyAmount=" + moneyAmount +
+                '}';
+    }
 }
