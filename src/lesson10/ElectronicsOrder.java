@@ -42,4 +42,5 @@ public class ElectronicsOrder extends Order {
         setTotalPrice(priceDelivery - bonus);
 
     }
+
 }
