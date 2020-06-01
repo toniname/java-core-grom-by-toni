@@ -1,6 +1,7 @@
 package lesson10.abstractbigexample;
 
-import javax.swing.text.Position;
+
+import java.util.Arrays;
 
 public abstract class Employee {
     private String name;
@@ -48,5 +49,19 @@ public abstract class Employee {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", yearsOfExperience=" + yearsOfExperience +
+                ", curPosition='" + curPosition + '\'' +
+                ", salaryPerMonth=" + salaryPerMonth +
+                ", bankAccount=" + bankAccount +
+                ", companiesWorked=" + Arrays.toString(companiesWorked) +
+                ", positionsWorked=" + Arrays.toString(positionsWorked) +
+                '}';
     }
 }
